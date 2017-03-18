@@ -1,0 +1,1 @@
+# Minaret Wordpress development theme
