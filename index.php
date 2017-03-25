@@ -2,9 +2,7 @@
 /**
  * Theme Index
  */
-?>
-
-<?php get_header(); ?>
+get_header(); ?>
 
 <main class="main-content-area">
 
