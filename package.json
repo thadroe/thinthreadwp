@@ -1,26 +1,28 @@
 {
-  "name": "minaret",
+  "name": "thinthreadwp",
   "version": "1.0.0",
-  "description": "Minaret gulp dependencies",
+  "description": "ThinThreadWP gulp dependencies",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thadroe/minaret.git"
+    "url": "git+https://github.com/thadroe/thinthreadwp.git"
   },
   "author": "Thad Roe",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/thadroe/minaret/issues"
+    "url": "https://github.com/thadroe/thinthreadwp/issues"
   },
-  "homepage": "https://github.com/thadroe/minaret#readme",
+  "homepage": "https://github.com/thadroe/thinthreadwp#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-livereload": "^3.8.1",
     "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-uglify": "^2.1.2",
     "gulp-util": "^3.0.8"
   }
 }
