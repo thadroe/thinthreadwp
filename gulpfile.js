@@ -4,14 +4,16 @@
 var gulp = require('gulp');
 var livereload = require('gulp-livereload')
 var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 
 // Sass task config
 gulp.task('sass', function () {
-  gulp.src('source/scss/main.scss')
-    .pipe(sourcemaps.init())
+    gulp.src('source/scss/main.scss')
+        // output uncompressed
+        .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'expanded',
             includePaths: ['node_modules/susy/sass']
@@ -26,19 +28,23 @@ gulp.task('sass', function () {
             'ios 6',
             'android 4'
         ))
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('assets/css/'));
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('assets/css/'));
 });
 
 // Uglify task config
-gulp.task('uglify', function() {
-  gulp.src('source/js/*.js')
-    .pipe(uglify('app.js'))
-    .pipe(gulp.dest('assets/js'))
+gulp.task('uglify', function () {
+    gulp.src('source/js/*.js')
+        // output uncompressed version
+        .pipe(rename('app.js'))
+        .pipe(gulp.dest('assets/js'))
+        // output compressed version
+        .pipe(uglify('app.min.js'))
+        .pipe(gulp.dest('assets/js'))
 });
 
 // Gulp watch config
-gulp.task('watch', function(){
+gulp.task('watch', function () {
     livereload.listen();
 
     gulp.watch('source/scss/*.scss', ['sass']);
@@ -48,7 +54,7 @@ gulp.task('watch', function(){
         '*.php',
         'assets/js/*.js',
         'template-parts/*.php'
-    ], function (files){
+    ], function (files) {
         livereload.changed(files)
     });
 });
