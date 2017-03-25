@@ -18,6 +18,7 @@ Thumbs.db
 ########
 
 node_modules
+node_modules/*
 
 # PHPStorm #
 ############
@@ -29,3 +30,6 @@ node_modules
 
 Movefile
 Gemfile
+.sass-cache
+.sass-cache/*
+*css.map
