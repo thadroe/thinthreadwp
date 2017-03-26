@@ -1,6 +1,6 @@
 ## ThinThreadWP Wordpress development theme
 
-A blank starter theme I use for development.
+A mostly blank starter theme I use for development.
 
 Includes
 - [Gulp](http://gulpjs.com/)
@@ -13,11 +13,13 @@ Includes
 
 If you use this theme you'll likely want to change the [text domain](https://codex.wordpress.org/I18n_for_WordPress_Developers#Text_Domains). 
 
-[Perl](https://www.perl.org/get.html) is pretty useful for doing this.
+[Perl](https://www.perl.org/get.html) is pretty useful for doing this quickly.
 
 This perl command will search and replace within text of all PHP and style.css files in a single directory. Run it with your own text domain in the theme directory and again in the 'template-parts' directory.
 
 `perl -p -i -e 's/thinthreadwp/{yourtextdomain}/g' *.php style.css`
+
+Or just use find and replace in your editor/IDE.
 
 ### Gulp
 
@@ -43,5 +45,7 @@ Start watching:
 `gulp watch`
 
 Note that depending on your gulpfile task customizations, you'll want to adjust what css and js is enqueued in functions.php. Currently css is compiled as 'expanded' and js is minified via uglify.
+
+For livereload, use the [livereload extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) for Chrome.
 
 
