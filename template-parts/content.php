@@ -22,6 +22,12 @@
 		endif; ?>
     </header>
 
+	<?php if ( get_the_post_thumbnail() ) : ?>
+        <figure class="thumbnail">
+			<?php the_post_thumbnail( 'large' ); ?>
+        </figure>
+	<?php endif; ?>
+
     <div class="article-content">
 		<?php
 		the_content( sprintf(
