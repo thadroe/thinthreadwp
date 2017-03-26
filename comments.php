@@ -20,11 +20,12 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<section id="comments" class="comments-area">
 
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
+        <header class="comments-header">
 		<h2 class="comments-title">
 			<?php
 			printf( // WPCS: XSS OK.
@@ -34,6 +35,7 @@ if ( post_password_required() ) {
 			);
 			?>
 		</h2><!-- .comments-title -->
+        </header>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 			<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
@@ -82,4 +84,4 @@ if ( post_password_required() ) {
 	comment_form();
 	?>
 
-</div><!-- #comments -->
+</section><!-- #comments -->

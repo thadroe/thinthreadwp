@@ -28,9 +28,13 @@ get_header(); ?>
 
 					get_template_part( 'template-parts/content', get_post_format() );
 
-				endwhile;
+					the_posts_navigation();
 
-				the_posts_navigation();
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
+
+				endwhile;
 
 			else :
 
