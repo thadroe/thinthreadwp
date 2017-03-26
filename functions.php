@@ -79,28 +79,28 @@ function thinthreadwp_register_theme_menus() {
 }
 
 /**
- * Widgets
+ * Widgets - Sidebars
  */
-add_action( 'widgets_init', 'thinthreadwp_slug_widgets_init' );
-function thinthreadwp_slug_widgets_init() {
+add_action( 'widgets_init', 'thinthreadwp_widgets_init' );
+function thinthreadwp_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => __( 'Primary Sidebar', 'thinthreadwp' ),
+		'id'            => 'primary',
+		'description'   => __( 'Default sidebar. Displays on the side of content.', 'thinthreadwp' ),
+		'before_widget' => '<div class="widget primary-sidebar-widget sidebar">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title-primary">',
+		'after_title'   => '</h4>'
+	) );
 
 	register_sidebar( array(
 		'name'          => __( 'Page Sidebar', 'thinthreadwp' ),
 		'id'            => 'page',
 		'description'   => __( 'Displays on the side of pages with a sidebar.', 'thinthreadwp' ),
-		'before_widget' => '<div class="widget page-sidebar sidebar shadow">',
+		'before_widget' => '<div class="widget page-sidebar-widget sidebar">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>'
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Blog Sidebar', 'thinthreadwp' ),
-		'id'            => 'blog',
-		'description'   => __( 'Displays on the side of pages in the blog section.', 'thinthreadwp' ),
-		'before_widget' => '<div class="widget blog-sidebar sidebar shadow">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class="widget-title">',
+		'before_title'  => '<h4 class="widget-title-page">',
 		'after_title'   => '</h4>'
 	) );
 
