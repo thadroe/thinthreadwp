@@ -29,17 +29,14 @@ gulp.task('sass', function () {
             'android 4'
         ))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('assets/css/'));
+        .pipe(gulp.dest('assets/css/'))
 });
 
 // Uglify task config
-gulp.task('uglify', function () {
+gulp.task('uglify', function() {
     gulp.src('source/js/*.js')
-        // output uncompressed version
-        .pipe(rename('app.js'))
-        .pipe(gulp.dest('assets/js'))
-        // output compressed version
-        .pipe(uglify('app.min.js'))
+        .pipe(rename('app.min.js'))
+        .pipe(uglify())
         .pipe(gulp.dest('assets/js'))
 });
 

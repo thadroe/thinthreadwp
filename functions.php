@@ -37,7 +37,7 @@ add_action( 'wp_enqueue_scripts', 'thinthreadwp_theme_js' );
 function thinthreadwp_theme_js() {
 
 	// Main scripts - Toggle the commenting on these to switch between normal and minified
-	wp_enqueue_script( 'app_js', get_template_directory_uri() . '/assets/js/app.js', array('jquery'), '', true );
-	//wp_enqueue_script( 'appmin_js', get_template_directory_uri() . '/assets/js/app.min.js', array('jquery'), '', true );
+	//wp_enqueue_script( 'app_js', get_template_directory_uri() . '/assets/js/app.js', array('jquery'), '', true );
+	wp_enqueue_script( 'appmin_js', get_template_directory_uri() . '/assets/js/app.min.js', array('jquery'), '', true );
 
 }
