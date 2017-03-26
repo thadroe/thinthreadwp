@@ -219,6 +219,23 @@ th {
 }
 
 html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.sticky-footer-flex-wrap {
+  -ms-flex: 1;
+      flex: 1;
+}
+
+html {
   font-family: serif;
 }
 

@@ -41,3 +41,67 @@ function thinthreadwp_theme_js() {
 	wp_enqueue_script( 'appmin_js', get_template_directory_uri() . '/assets/js/app.min.js', array('jquery'), '', true );
 
 }
+
+/**
+ * Content width
+ */
+add_action( 'after_setup_theme', 'thinthreadwp_content_width', 0 );
+function thinthreadwp_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'thinthreadwp_content_width', 760 );
+}
+
+/**
+ * Set how long excerpts should be
+ */
+add_filter( 'excerpt_length', 'thinthreadwp_excerpt_length', 999 );
+function thinthreadwp_excerpt_length( $length ) {
+	return 20;
+}
+
+/**
+ * Set navigation menus
+ */
+add_action( 'init', 'thinthreadwp_register_theme_menus' );
+function thinthreadwp_register_theme_menus() {
+
+	register_nav_menus(
+		array(
+			'primary-menu' => __( 'Primary Menu', 'thinthreadwp' )
+		)
+	);
+
+	register_nav_menus(
+		array(
+			'footer-menu' => __( 'Footer Menu', 'thinthreadwp' )
+		)
+	);
+
+}
+
+/**
+ * Widgets
+ */
+add_action( 'widgets_init', 'thinthreadwp_slug_widgets_init' );
+function thinthreadwp_slug_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => __( 'Page Sidebar', 'thinthreadwp' ),
+		'id'            => 'page',
+		'description'   => __( 'Displays on the side of pages with a sidebar.', 'thinthreadwp' ),
+		'before_widget' => '<div class="widget page-sidebar sidebar shadow">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>'
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Blog Sidebar', 'thinthreadwp' ),
+		'id'            => 'blog',
+		'description'   => __( 'Displays on the side of pages in the blog section.', 'thinthreadwp' ),
+		'before_widget' => '<div class="widget blog-sidebar sidebar shadow">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>'
+	) );
+
+}

@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html class="no-js no-svg" <?php language_attributes(); ?>>
 <head>
+
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,6 +18,8 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<div class="sticky-footer-flex-wrap"><!-- closed in footer -->
 
 <header class="main-header">
     <section class="branding">
@@ -36,11 +39,20 @@
 	    endif; ?>
 
     </section>
+
     <nav class="primary-nav">
-        <ul class="primary-nav-ul">
-            <li class="primary-nav-li active">Item 1</li>
-            <li class="primary-nav-li">Item 2</li>
-            <li class="primary-nav-li">Item 3</li>
-        </ul>
+
+	    <?php
+	    $defaults = array(
+		    'container'      => true,
+		    'theme_location' => 'primary-menu',
+		    'menu_class'     => 'primary-nav-menu',
+		    'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
+	    );
+
+	    wp_nav_menu( $defaults );
+	    ?>
+
     </nav>
+
 </header>

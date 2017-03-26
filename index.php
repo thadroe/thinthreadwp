@@ -6,20 +6,20 @@ get_header(); ?>
 
 <main class="main-content-area">
 
-	<section class="first-section">
-		<header class="first-section-header">
+	<section class="primary-section">
+		<header class="primary-section-header">
 
 		</header>
-		<article class="first-section-article">
+		<article class="article-container">
 			<header class="article-header">
-				<h1 class="article-h1"></h1>
+				<h1 class="article-title"></h1>
 			</header>
 			<p class="article-content"></p>
 		</article>
 	</section>
 
-    <?php get_sidebar(); ?>
-
 </main>
+
+<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
