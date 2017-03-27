@@ -6,28 +6,21 @@ get_header(); ?>
 
 	<main class="main-content-area">
 
-		<section class="primary-section">
+        <section class="primary-section 404-not-found">
 
-			<header class="primary-section-header">
+            <header class="primary-section-header">
 
-			</header>
+                <h1 class="primary-section-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'thinthreadwp' ); ?></h1>
 
-			<?php
-			if ( have_posts() ) : while ( have_posts() ) : the_post();
+            </header>
 
-				get_template_part( 'template-parts/content', get_post_format() );
+            <div class="404-content">
 
-			endwhile;
+                <p><?php esc_html_e( 'It looks like nothing was found at this location.', 'thinthreadwp' ); ?></p>
 
-				the_posts_navigation();
+            </div>
 
-			else :
-
-				get_template_part( 'template-parts/content', 'none' );
-
-			endif; ?>
-
-		</section>
+        </section>
 
 	</main>
 

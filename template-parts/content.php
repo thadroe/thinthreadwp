@@ -7,6 +7,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('article-container'); ?>>
 
     <header class="article-header">
+
 		<?php
 		if ( is_single() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -20,15 +21,19 @@
             </div>
 			<?php
 		endif; ?>
+
     </header>
 
 	<?php if ( get_the_post_thumbnail() ) : ?>
+
         <figure class="thumbnail">
 			<?php the_post_thumbnail( 'large' ); ?>
         </figure>
+
 	<?php endif; ?>
 
-    <div class="article-content">
+    <section class="article-content">
+
 		<?php
 		the_content( sprintf(
 		/* translators: %s: Name of current post. */
@@ -41,10 +46,13 @@
 			'after'  => '</div>',
 		) );
 		?>
-    </div>
+
+    </section>
 
     <footer class="article-footer">
+
 		<?php thinthreadwp_entry_footer(); ?>
+
     </footer>
 
 </article>

@@ -8,9 +8,14 @@ get_header(); ?>
 
 		<section class="primary-section">
 
-			<header class="primary-section-header">
+            <header class="archive-section-header">
 
-			</header>
+				<?php
+				the_archive_title( '<h1 class="archive-title">', '</h1>' );
+				the_archive_description( '<div class="archive-description">', '</div>' );
+				?>
+
+            </header>
 
 			<?php
 			if ( have_posts() ) : while ( have_posts() ) : the_post();
