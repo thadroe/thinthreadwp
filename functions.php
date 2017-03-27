@@ -11,6 +11,8 @@ function thinthreadwp_theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'customize-selective-refresh-widgets' );
+	add_theme_support( 'custom-header' )
+	add_theme_support( 'custom-background' );
 	load_theme_textdomain( 'thinthreadwp', get_template_directory() . '/languages' );
 
 }
@@ -37,6 +39,14 @@ function thinthreadwp_theme_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+}
+
+/**
+ * Registers an editor stylesheet for the theme.
+ */
+add_action( 'admin_init', 'thinthreadwp_add_editor_styles' );
+function thinthreadwp_add_editor_styles() {
+	add_editor_style( '/assets/css/editor-styles.css' );
 }
 
 /**
