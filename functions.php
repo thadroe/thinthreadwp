@@ -11,7 +11,7 @@ function thinthreadwp_theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'customize-selective-refresh-widgets' );
-	add_theme_support( 'custom-header' )
+	add_theme_support( 'custom-header' );
 	add_theme_support( 'custom-background' );
 	load_theme_textdomain( 'thinthreadwp', get_template_directory() . '/languages' );
 
