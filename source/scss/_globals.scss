@@ -1,0 +1,16 @@
+html {
+  font-family: sans-serif;
+}
+
+img, video, audio {
+  max-width: 100%;
+  height: auto;
+}
+
+footer {
+  clear: both;
+}
+
+.fluid-video {
+  @include fluidwidthvid();
+}

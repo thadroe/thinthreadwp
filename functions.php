@@ -33,6 +33,7 @@ function thinthreadwp_theme_scripts() {
 	// Main scripts - Toggle the commenting on these and adjust gulpfile to switch between normal and minified
 	//wp_enqueue_script( 'app_js', get_template_directory_uri() . '/assets/js/app.js', array('jquery'), '', true );
 	wp_enqueue_script( 'appmin_js', get_template_directory_uri() . '/assets/js/app.min.js', array('jquery'), '', true );
+    wp_enqueue_script( 'fluidvid_js', get_template_directory_uri() . '/assets/js/fluidvideo.js', array('jquery'), '', true );
 
 	// Comment reply and threading script
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
