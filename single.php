@@ -4,47 +4,47 @@
  */
 get_header(); ?>
 
-	<main class="main-content-area">
+    <main class="main-content-area">
 
-		<section class="primary-section">
+        <section class="primary-section">
 
-			<header class="primary-section-header">
+            <header class="primary-section-header">
 
-			</header>
+            </header>
 
-			<?php
-			if ( have_posts() ) :
+            <?php
+            if ( have_posts() ) :
 
-				if ( is_home() && ! is_front_page() ) : ?>
-					<header>
-						<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-					</header>
+                if ( is_home() && ! is_front_page() ) : ?>
+                    <header>
+                        <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+                    </header>
 
-					<?php
-				endif;
+                    <?php
+                endif;
 
-				/* Start the Loop */
-				while ( have_posts() ) : the_post();
+                /* Start the Loop */
+                while ( have_posts() ) : the_post();
 
-					get_template_part( 'template-parts/content', get_post_format() );
+                    get_template_part( 'template-parts/content', get_post_format() );
 
-					the_posts_navigation();
+                    the_posts_navigation();
 
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
+                    if ( comments_open() || get_comments_number() ) :
+                        comments_template();
+                    endif;
 
-				endwhile;
+                endwhile;
 
-			else :
+            else :
 
-				get_template_part( 'template-parts/content', 'none' );
+                get_template_part( 'template-parts/content', 'none' );
 
-			endif; ?>
+            endif; ?>
 
-		</section>
+        </section>
 
-	</main>
+    </main>
 
 <?php get_sidebar(); ?>
 

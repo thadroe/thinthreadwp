@@ -4,7 +4,7 @@
  */
 get_header(); ?>
 
-	<main class="main-content-area">
+    <main class="main-content-area">
 
         <section class="primary-section 404-not-found">
 
@@ -22,7 +22,7 @@ get_header(); ?>
 
         </section>
 
-	</main>
+    </main>
 
 <?php get_sidebar(); ?>
 

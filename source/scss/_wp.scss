@@ -103,51 +103,51 @@ blockquote.alignright {
  * WP Comments
  */
 
- .comment-form-comment label {
-   display: block;
- }
+.comment-form-comment label {
+  display: block;
+}
 
- .cat-links::after, .tags-links::after {
-   content: " ";
- }
+.cat-links::after, .tags-links::after {
+  content: " ";
+}
 
- .edit-link {
-   display: block;
- }
+.edit-link {
+  display: block;
+}
 
- /* Make sure embeds and iframes fit their containers. */
+/* Make sure embeds and iframes fit their containers. */
 
 embed,
 iframe,
 object {
-	margin-bottom: 1em;
-	max-width: 100%;
+  margin-bottom: 1em;
+  max-width: 100%;
 }
 
 .wp-caption,
 .gallery-caption {
-	color: #666;
-	font-size: 13px;
-	font-size: 0.8125rem;
-	font-style: italic;
-	margin-bottom: 1em;
-	max-width: 100%;
+  color: #666;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  font-style: italic;
+  margin-bottom: 1em;
+  max-width: 100%;
 }
 
 .wp-caption img[class*="wp-image-"] {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+  margin: 0.8075em 0;
 }
 
 /* Media Elements */
 
 .mejs-container {
-	margin-bottom: 1em;
+  margin-bottom: 1em;
   max-width: 100%;
 }
 
@@ -156,8 +156,8 @@ object {
 .mejs-controls a.mejs-horizontal-volume-slider,
 .mejs-controls a.mejs-horizontal-volume-slider:focus,
 .mejs-controls a.mejs-horizontal-volume-slider:hover {
-	background: transparent;
-	border: 0;
+  background: transparent;
+  border: 0;
 }
 
 /**
