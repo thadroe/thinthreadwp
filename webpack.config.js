@@ -1,7 +1,9 @@
-const webpack           = require('webpack');
-const path              = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const inProduction      = (process.env.NODE_ENV === 'production');
+const webpack            = require('webpack');
+const path               = require('path');
+const ExtractTextPlugin  = require('extract-text-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ManifestPlugin     = require('webpack-manifest-plugin');
+const productionEnv      = (process.env.NODE_ENV === 'production');
 
 module.exports = {
   entry: {
@@ -12,7 +14,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'js/bundle.js'
+    filename: 'js/bundle-[chunkhash].js'
   },
   module: {
     rules: [
@@ -24,8 +26,44 @@ module.exports = {
         })
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        test: /\.(eot|ttf|woff|woff2|EOT|TTF|WOFF|WOFF2)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'fonts/[name].[ext]'
+        }
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg|PNG|JPE?G|GIF|SVG)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/[name]-[hash].[ext]'
+            }
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 65
+              },
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                quality: '65-90',
+                speed: 4
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              webp: {
+                quality: 75
+              }
+            }
+          }
+        ]
       },
       {
         test: /\.js$/,
@@ -35,14 +73,14 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('css/[name].css'),
-    new webpack.LoaderOptionsPlugin({
-      minimize: inProduction
-    })
+    new ExtractTextPlugin('css/[name]-[chunkhash].css'),
+    new webpack.LoaderOptionsPlugin({minimize: productionEnv}),
+    new CleanWebpackPlugin('dist',[{verbose: true}]),
+    new ManifestPlugin()
   ]
 };
 
-if (inProduction) {
+if (productionEnv) {
   module.exports.plugins.push(
     new webpack.optimize.UglifyJsPlugin()
   );
