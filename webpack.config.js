@@ -5,5 +5,18 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "./dist/js"),
     filename: "bundle.js"
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["css-loader"]
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader"
+      }
+    ]
   }
 };

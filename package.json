@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/thadroe/thinthreadwp#readme",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.11",
     "webpack": "^3.11.0"
   },
   "dependencies": {
