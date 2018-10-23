@@ -20,6 +20,16 @@ Thumbs.db
 node_modules
 node_modules/*
 
+# Composer #
+############
+
+vendor/*
+
+# Composer #
+############
+
+dist/*
+
 # PHPStorm #
 ############
 

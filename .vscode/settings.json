@@ -1,0 +1,8 @@
+{
+  "phpcs.enable": true,
+  "phpcs.composerJsonPath": "composer.json",
+  "phpcs.autoConfigSearch": true,
+  "phpcs.executablePath": "vendor/bin/phpcs",
+  "phpcs.showSources": true,
+  "phpcs.standard": null
+}
